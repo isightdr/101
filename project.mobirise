@@ -5,11 +5,11 @@
       "name": "photom4",
       "title": "PhotoM4",
       "styling": {
-        "primaryColor": "#e1201d",
+        "primaryColor": "#ffffff",
         "secondaryColor": "#ff3366",
         "successColor": "#F7ED4A",
-        "infoColor": "#82786E",
-        "warningColor": "#879A9F",
+        "infoColor": "#55b4d4",
+        "warningColor": "#55b4d4",
         "dangerColor": "#B1A374",
         "mainFont": "DM Sans",
         "display1Font": "DM Sans",
@@ -43,7 +43,7 @@
     ],
     "imageResize": true,
     "favicon": "@PROJECT_PATH@/assets/images/favicon-32x32-32x32.png",
-    "mbrsiteDomain": "waose9rdal",
+    "mbrsiteDomain": "ojhojtgfd3",
     "usedWebp": false,
     "robotsSwitcher": false,
     "sitemapSwitcher": false,
@@ -51,7 +51,7 @@
     "siteUrl": false,
     "cookiesAlert": false,
     "gdpr": false,
-    "uniqCompNum": 7,
+    "uniqCompNum": 8,
     "versionPublish": "5.8.14"
   },
   "pages": {
@@ -344,6 +344,90 @@
           "_global": false,
           "_once": false,
           "_params": {}
+        },
+        {
+          "_name": "afeatures2",
+          "_sourceTheme": "shopm5",
+          "_customHTML": "<section class=\"features2 shopm5\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"5\">\n        <input type=\"range\" inline title=\"Content Top\" name=\"paddingTopContent\" min=\"0\" max=\"9\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Content Bottom\" name=\"paddingBottomContent\" min=\"0\" max=\"9\" step=\"1\" value=\"4\">\n        <select title=\"Align\" name=\"contentAlign\">\n            <option value=\"justify-content-start\">Left</option>\n            <option value=\"justify-content-center\" selected>Center</option>\n            <option value=\"justify-content-end\">Right</option>\n        </select>\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showMainTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showMainSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n        <input type=\"color\" title=\"Content Color\" name=\"contentBg\" value=\"#000000\">\n        <header>Card</header>\n        <input type=\"checkbox\" title=\"Icons\" name=\"showIcon\">\n        <input type=\"color\" title=\"Icon Color\" name=\"iconColor\" value=\"#ffffff\" condition=\"showIcon\">\n        <input type=\"color\" title=\"Card Border Color\" name=\"cardBorderColor\" value=\"#c1c1c1\" condition=\"cardsAmount > 1 &amp;&amp; (showIcon || showTitle)\">\n        <input type=\"checkbox\" title=\"Card Title\" name=\"showTitle\" checked>\n        <select title=\"Cards\" name=\"cardsAmount\" condition=\"showIcon || showTitle\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\" selected>3</option>\n        </select>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/shopm5/components/_images/background3.jpg\" parallax>\n            <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/shopm5/components/_images/background3.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row {{ contentAlign }}\">\n            <div class=\"col-text\">\n                <h3 class=\"mbr-section-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-7\" mbr-if=\"showMainTitle\" data-app-selector=\".mbr-section-title\">\n                    <b>HOW TO ORDER</b></h3>\n                <h5 class=\"mbr-section-subtitle mbr-fonts-style align-center mb-0 mb-0\" mbr-theme-style=\"display-2\" mbr-if=\"showMainSubtitle\" data-app-selector=\".mbr-section-subtitle\"><b>Add Trivex lenses starting at $29.95 to any frame.</b></h5>\n                <p class=\"mbr-text mbr-fonts-style align-center mb-0 mb-0\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                    Our store has a very large selection of goods and fast delivery process. Our\n                    consultants would always provide you with a proper choice. What's your\n                    opinion of Online Store Features Template?\n                </p>\n                <div class=\"cards row justify-content-center\">\n                    <div class=\"card col-12 col-lg-4\">\n                        <div class=\"card-wrapper\">\n                            <div class=\"iconfont-wrapper\" mbr-if=\"showIcon\">\n                                <span mbr-icon class=\"mbr-iconfont socicon-avvo socicon\"></span>\n                            </div>\n                            <h5 class=\"card-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".card-title\"><b>1. <a href=\"https://www.zennioptical.com\" class=\"text-primary\">Choose your favorite frame</a></b></h5>\n                        </div>\n                    </div>\n                    <div class=\"card col-12 col-lg-4\" mbr-if=\"cardsAmount > 1\">\n                        <div class=\"card-wrapper\">\n                            <div class=\"iconfont-wrapper\" mbr-if=\"showIcon\">\n                                <span mbr-icon class=\"mbr-iconfont socicon-bonanza socicon\"></span>\n                            </div>\n                            <h5 class=\"card-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".card-title\"><b>2. Select prescription, clear, general use.</b></h5>\n                        </div>\n                    </div>\n                    <div class=\"card col-12 col-lg-4\" mbr-if=\"cardsAmount > 2\">\n                        <div class=\"card-wrapper\">\n                            <div class=\"iconfont-wrapper\" mbr-if=\"showIcon\">\n                                <span mbr-icon class=\"mbr-iconfont socicon-crunchbase socicon\"></span>\n                            </div>\n                            <h5 class=\"card-title mbr-fonts-style align-center mb-0\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\" data-app-selector=\".card-title\"><b>3. Pick Trivex.&nbsp;</b></h5>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</section>",
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".container, .container-fluid": {
+              "padding-top": "(@paddingTopContent * 1rem)",
+              "padding-bottom": "(@paddingBottomContent * 1rem)",
+              "background-color": "@contentBg"
+            },
+            ".col-text": {
+              "@media (min-width: 992px)": {
+                "max-width": "624px"
+              },
+              "width": "100%"
+            },
+            ".mbr-section-title": {
+              "color": "#ffffff"
+            },
+            ".mbr-section-subtitle": {
+              "margin-top": "8px",
+              "color": "#ffffff"
+            },
+            ".mbr-text": {
+              "margin-top": "24px",
+              "color": "#ffffff"
+            },
+            ".cards": {
+              "margin-top": "2rem",
+              "row-gap": "32px"
+            },
+            ".card": {
+              "border-radius": "0",
+              "@media (min-width: 992px)": {
+                "&:not(:first-child)": {
+                  "border-left": "1px solid @cardBorderColor"
+                }
+              }
+            },
+            ".card-wrapper": {
+              "display": "flex",
+              "flex-direction": "column",
+              "align-items": "center"
+            },
+            ".mbr-iconfont": {
+              "display": "block",
+              "font-size": "56px",
+              "color": "@iconColor",
+              "margin-bottom": "1rem"
+            },
+            ".card-title": {
+              "color": "#ffffff"
+            }
+          },
+          "_cid": "tJ5NuYmvDS",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "afeatures2-7"
         },
         {
           "alias": false,
