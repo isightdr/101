@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lens Thickness Simulator</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            height: 500px; /* Fixed height to prevent resizing */
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 20px 0 10px;
+            color: #666;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .lens {
+            margin: 20px auto;
+            display: block;
+            vertical-align: bottom;
+            background-color: transparent;
+        }
+
+        /* Transition for smoother UI experience */
+        .lens, input[type="range"], label {
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Lens Thickness Simulator</h2>
+
+        <label for="prescription">Prescription (Diopters): <span id="prescriptionValue">0.00</span> D</label>
+        <input type="range" id="prescription" min="-10" max="10" step="0.25" value="0">
+
+        <label for="index">Refractive Index: <span id="indexValue">1.50</span></label>
+        <input type="range" id="index" min="1.5" max="1.7" step="0.01" value="1.5">
+
+        <h3>Visual Representation:</h3>
+        <img id="lens" class="lens" src="minus_lens.jpg" alt="Lens Representation">
+    </div>
+
+    <script>
+        document.getElementById('prescription').addEventListener('input', function (e) {
+            document.getElementById('prescriptionValue').innerText = parseFloat(e.target.value).toFixed(2);
+            updateLensRepresentation();
+        });
+
+        document.getElementById('index').addEventListener('input', function (e) {
+            document.getElementById('indexValue').innerText = parseFloat(e.target.value).toFixed(2);
+            updateLensRepresentation();
+        });
+
+        function updateLensRepresentation() {
+            const prescription = parseFloat(document.getElementById('prescription').value);
+            const index = parseFloat(document.getElementById('index').value);
+            const lensElement = document.getElementById('lens');
+
+            // Base size at 0 diopters
+            let baseSize = 400;
+
+            // Adjust size based on prescription
+            let sizeAdjustment = baseSize + Math.abs(prescription) * 20;
+
+            // Shrink size as index increases
+            sizeAdjustment = sizeAdjustment / index;
+
+            lensElement.style.width = sizeAdjustment + 'px';
+
+            // Change lens image based on prescription
+            if (prescription > 0) {
+                lensElement.src = "plus_lens.jpg"; // Replace with the path to your plus lens image
+            } else {
+                lensElement.src = "minus_lens.jpg"; // Replace with the path to your minus lens image
+            }
+        }
+    </script>
+</body>
+
+</html>
